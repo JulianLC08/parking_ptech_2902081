@@ -21,6 +21,10 @@ public class Main {
        Cliente cliente1 = new Cliente("Julian", "Londoño", 10278965L);
        Cliente cliente2 = new Cliente("Brayan", "Morales", 1034281342L);
 
+       //Crear Empleado
+       Empleado empleado1 = new Empleado("Rodolfo", 123456789L);
+       List<Empleado> empleados = new ArrayList<Empleado>();
+
 
        //Invocar el metodo addCar:
        cliente1.addCar(carrito1);
@@ -53,12 +57,16 @@ public class Main {
        //añadir el registro a la lista 
        misRegistros.add(registro1);
        misRegistros.add(registro2);
+       empleados.add(empleado1);
 
        System.out.println("Registros de E/S parking");
-       for(Registro r : misRegistros){
-        System.out.println("Cliente: " + r.cliente.nombre + " " + r.cliente.apellido + "|" + r.carro.placa + " " + r.carro.tipovehiculo + "|" + r.valor +  "|" + r.fechaInicio + " " + r.horaInicio +  "|");
-       }
+       for(Registro r : misRegistros) 
+       for(Empleado e : empleados){
+        System.out.println("Cliente: " + r.cliente.nombre + " " + r.cliente.apellido + "|" + r.carro.placa + " " + r.carro.tipovehiculo + "|" + r.valor +  "|" + r.fechaInicio + " " + r.horaInicio +  "|" + "Codigo del empleado a cargo: " + e.codigoEmpleado);
+       
 
-    }
+        }
      
+    }
+
 }
